@@ -4,10 +4,9 @@ td {
     width: 100px;
     text-align: center;
     vertical-align: middle;
-    font-family: "Comic Sans MS", cursive;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 70px;
     cursor: pointer;
-
 }
 
 table {
@@ -16,8 +15,6 @@ table {
     left: 50%;
     margin-left: -155px;
     top: 50px;
-
-
 }
 
 table tr:first-child td {
@@ -39,8 +36,8 @@ table tr td:last-child {
 .endgame {
     display: none;
     width: 200px;
-    top: 200px;
-    background-color: rgba(rgb(50, 104, 14), green, blue, alpha);
+    top: 120px;
+    background-color: rgba(205, 133, 63, 0.8);
     position: absolute;
     left: 50%;
     margin-left: -100px;
@@ -49,5 +46,5 @@ table tr td:last-child {
     text-align: center;
     border-radius: 5px;
     color: white;
-
+    font-size: 2em;
 }
