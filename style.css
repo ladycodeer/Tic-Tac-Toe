@@ -1,5 +1,18 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("wallpaperflare.com_wallpaper\ \(6\).jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
 td {
-    border: 2px solid #333;
+    border: 8px solid #d6d9df;
     height: 100px;
     width: 100px;
     text-align: center;
@@ -7,6 +20,22 @@ td {
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 70px;
     cursor: pointer;
+    color: rgb(15, 16, 17);
+}
+
+button {
+    background-color: #829460;
+
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in 0.6s;
 }
 
 table {
@@ -15,6 +44,11 @@ table {
     left: 50%;
     margin-left: -155px;
     top: 50px;
+    background-color: #A4907C;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+
 }
 
 table tr:first-child td {
@@ -37,7 +71,7 @@ table tr td:last-child {
     display: none;
     width: 200px;
     top: 120px;
-    background-color: rgba(205, 133, 63, 0.8);
+    background-color: rgba(89, 96, 41, 0.8);
     position: absolute;
     left: 50%;
     margin-left: -100px;
