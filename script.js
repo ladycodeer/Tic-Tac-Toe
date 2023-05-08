@@ -28,7 +28,7 @@ function startGame() {
 function turnClick(square) {
     if (typeof origBoard[square.target.id] == 'number') {
         turn(square.target.id, huPlayer)
-        if (!checkTie()) turn(bestSpot(), aiPlayer);
+        if (!checkWin(origBoard, huPlayer) && !checkTie()) turn(bestSpot(), aiPlayer);
     }
 }
 
@@ -87,15 +87,14 @@ function checkTie() {
     }
     return false;
 }
+
 function minimax(newBoard, player) {
-    var availSpots = emptySquares(newBoard);
+    var availSpots = emptySquares();
 
-    if (checkWin(newBoard, player)) {
+    if (checkWin(newBoard, huPlayer)) {
         return { score: -10 };
-
-
     } else if (checkWin(newBoard, aiPlayer)) {
-        return { score: 20 };
+        return { score: 10 };
     } else if (availSpots.length === 0) {
         return { score: 0 };
     }
@@ -114,9 +113,10 @@ function minimax(newBoard, player) {
         }
 
         newBoard[availSpots[i]] = move.index;
-        moves.push(moves);
 
+        moves.push(move);
     }
+
     var bestMove;
     if (player === aiPlayer) {
         var bestScore = -10000;
@@ -126,6 +126,15 @@ function minimax(newBoard, player) {
                 bestMove = i;
             }
         }
+    } else {
+        var bestScore = 10000;
+        for (var i = 0; i < moves.length; i++) {
+            if (moves[i].score < bestScore) {
+                bestScore = moves[i].score;
+                bestMove = i;
+            }
+        }
     }
+
     return moves[bestMove];
 }
